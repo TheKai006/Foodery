@@ -19,7 +19,7 @@ import {translation} from '../../assets/Lang/Languages';
 const HomePage = ({navigation}) => {
   const [data, setData] = useState();
   const [selectedLang, setSelectedLang] = useState(0);
-
+  const [some, setSome] = useState(true);
   useEffect(() => {
     getLang();
   }, []);
