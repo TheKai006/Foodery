@@ -1,11 +1,14 @@
 #import "AppDelegate.h"
-
 #import <React/RCTBundleURLProvider.h>
+#import <GoogleMaps/GoogleMaps.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  
+  [GMSServices provideAPIKey:@"AIzaSyAPbxsTh6PW6oq3uZlkGNVrpZtC3qintN0"];
+  
   self.moduleName = @"Foodery";
   // You can add your custom initial props in the dictionary below.
   // They will be passed down to the ViewController used by React Native.
@@ -31,6 +34,7 @@
 - (BOOL)concurrentRootEnabled
 {
   return true;
+ 
 }
 
 @end
