@@ -2,7 +2,6 @@ import MapView, {
   Callout,
   Circle,
   Marker,
-  PROVIDER_DEFAULT,
   PROVIDER_GOOGLE,
   Polyline,
 } from 'react-native-maps';
@@ -28,6 +27,7 @@ const MapPage = ({navigation}) => {
   useEffect(() => {
     Geolocation.getCurrentPosition(data => {
       setUserLatitude(data.coords.latitude);
+
       setUserLongitude(data.coords.longitude);
     });
   }, []);
@@ -48,7 +48,7 @@ const MapPage = ({navigation}) => {
   return (
     <View style={styles.container}>
       <MapView
-        provider={PROVIDER_GOOGLE}
+        provider="google"
         style={styles.map}
         initialRegion={userLocation}>
         <Marker

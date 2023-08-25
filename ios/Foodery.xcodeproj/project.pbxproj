@@ -12,8 +12,8 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		17E60BEC2A655EBF00A8BCC6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17E60BEB2A655EBF00A8BCC6 /* Launch Screen.storyboard */; };
-		BE3CB40393352A46A8FABC15 /* libPods-Foodery-FooderyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 566977F8FC21596291BC900D /* libPods-Foodery-FooderyTests.a */; };
-		D914C0E0ACDEE2298EE1354C /* libPods-Foodery.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CD9FA0A4A9FD0F47B591DE /* libPods-Foodery.a */; };
+		A1925311EC13BA24A718838E /* libPods-Foodery-FooderyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 990FB6061D8BC4CAC8E3228D /* libPods-Foodery-FooderyTests.a */; };
+		B868258FE2DB81BB0AA684A9 /* libPods-Foodery.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD9167CD1A4FC15BC5601B7 /* libPods-Foodery.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,13 +37,13 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Foodery/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Foodery/main.m; sourceTree = "<group>"; };
 		17E60BEB2A655EBF00A8BCC6 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		55CD9FA0A4A9FD0F47B591DE /* libPods-Foodery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Foodery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		566977F8FC21596291BC900D /* libPods-Foodery-FooderyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Foodery-FooderyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		717CE20E085EC1A4F6F92D30 /* Pods-Foodery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodery.release.xcconfig"; path = "Target Support Files/Pods-Foodery/Pods-Foodery.release.xcconfig"; sourceTree = "<group>"; };
-		91BDBBDD32BC5AED4CE62A60 /* Pods-Foodery-FooderyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodery-FooderyTests.release.xcconfig"; path = "Target Support Files/Pods-Foodery-FooderyTests/Pods-Foodery-FooderyTests.release.xcconfig"; sourceTree = "<group>"; };
-		B0167D4082F12B99DF8A350B /* Pods-Foodery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodery.debug.xcconfig"; path = "Target Support Files/Pods-Foodery/Pods-Foodery.debug.xcconfig"; sourceTree = "<group>"; };
-		E810A5DCD27DDD0503DDC6F0 /* Pods-Foodery-FooderyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodery-FooderyTests.debug.xcconfig"; path = "Target Support Files/Pods-Foodery-FooderyTests/Pods-Foodery-FooderyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		32D9EE49974556C5CD4C2997 /* Pods-Foodery-FooderyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodery-FooderyTests.release.xcconfig"; path = "Target Support Files/Pods-Foodery-FooderyTests/Pods-Foodery-FooderyTests.release.xcconfig"; sourceTree = "<group>"; };
+		41E9049771E4DA5AA0DED2D3 /* Pods-Foodery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodery.release.xcconfig"; path = "Target Support Files/Pods-Foodery/Pods-Foodery.release.xcconfig"; sourceTree = "<group>"; };
+		4E6C8BBC6205F36E279ED38D /* Pods-Foodery-FooderyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodery-FooderyTests.debug.xcconfig"; path = "Target Support Files/Pods-Foodery-FooderyTests/Pods-Foodery-FooderyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5BD9167CD1A4FC15BC5601B7 /* libPods-Foodery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Foodery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		990FB6061D8BC4CAC8E3228D /* libPods-Foodery-FooderyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Foodery-FooderyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		EE43FC65E56325DC3187D60C /* Pods-Foodery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodery.debug.xcconfig"; path = "Target Support Files/Pods-Foodery/Pods-Foodery.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE3CB40393352A46A8FABC15 /* libPods-Foodery-FooderyTests.a in Frameworks */,
+				A1925311EC13BA24A718838E /* libPods-Foodery-FooderyTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D914C0E0ACDEE2298EE1354C /* libPods-Foodery.a in Frameworks */,
+				B868258FE2DB81BB0AA684A9 /* libPods-Foodery.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				55CD9FA0A4A9FD0F47B591DE /* libPods-Foodery.a */,
-				566977F8FC21596291BC900D /* libPods-Foodery-FooderyTests.a */,
+				5BD9167CD1A4FC15BC5601B7 /* libPods-Foodery.a */,
+				990FB6061D8BC4CAC8E3228D /* libPods-Foodery-FooderyTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -140,10 +140,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B0167D4082F12B99DF8A350B /* Pods-Foodery.debug.xcconfig */,
-				717CE20E085EC1A4F6F92D30 /* Pods-Foodery.release.xcconfig */,
-				E810A5DCD27DDD0503DDC6F0 /* Pods-Foodery-FooderyTests.debug.xcconfig */,
-				91BDBBDD32BC5AED4CE62A60 /* Pods-Foodery-FooderyTests.release.xcconfig */,
+				EE43FC65E56325DC3187D60C /* Pods-Foodery.debug.xcconfig */,
+				41E9049771E4DA5AA0DED2D3 /* Pods-Foodery.release.xcconfig */,
+				4E6C8BBC6205F36E279ED38D /* Pods-Foodery-FooderyTests.debug.xcconfig */,
+				32D9EE49974556C5CD4C2997 /* Pods-Foodery-FooderyTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -155,12 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "FooderyTests" */;
 			buildPhases = (
-				CEC2E17B217FDF4042BE6456 /* [CP] Check Pods Manifest.lock */,
+				28B86B8BF172B35C658500BE /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				1CC8D410880D91C148D74DE1 /* [CP] Embed Pods Frameworks */,
-				E017BCB6D95992AE601D265A /* [CP] Copy Pods Resources */,
+				7AD07AEC94A100E679FF3CB2 /* [CP] Embed Pods Frameworks */,
+				1761576DA0B9765A6E6E8E53 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,14 +176,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Foodery" */;
 			buildPhases = (
-				06480782B8C41A3E0E4FC7DB /* [CP] Check Pods Manifest.lock */,
+				47C4F09B8204166B690721E5 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				37287539B9F82755FA2C8485 /* [CP] Embed Pods Frameworks */,
-				D957BD43ACCC64D756E7E6B5 /* [CP] Copy Pods Resources */,
+				2C4669FC75E2ECC9FF5F2A93 /* [CP] Embed Pods Frameworks */,
+				FB371FF5E9D201CB3E43DD95 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -266,63 +266,24 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		06480782B8C41A3E0E4FC7DB /* [CP] Check Pods Manifest.lock */ = {
+		1761576DA0B9765A6E6E8E53 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Foodery-FooderyTests/Pods-Foodery-FooderyTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Foodery-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-Foodery-FooderyTests/Pods-Foodery-FooderyTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Foodery-FooderyTests/Pods-Foodery-FooderyTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1CC8D410880D91C148D74DE1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Foodery-FooderyTests/Pods-Foodery-FooderyTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Foodery-FooderyTests/Pods-Foodery-FooderyTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Foodery-FooderyTests/Pods-Foodery-FooderyTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		37287539B9F82755FA2C8485 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Foodery/Pods-Foodery-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Foodery/Pods-Foodery-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Foodery/Pods-Foodery-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CEC2E17B217FDF4042BE6456 /* [CP] Check Pods Manifest.lock */ = {
+		28B86B8BF172B35C658500BE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -344,7 +305,63 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D957BD43ACCC64D756E7E6B5 /* [CP] Copy Pods Resources */ = {
+		2C4669FC75E2ECC9FF5F2A93 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Foodery/Pods-Foodery-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Foodery/Pods-Foodery-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Foodery/Pods-Foodery-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47C4F09B8204166B690721E5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Foodery-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7AD07AEC94A100E679FF3CB2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Foodery-FooderyTests/Pods-Foodery-FooderyTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Foodery-FooderyTests/Pods-Foodery-FooderyTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Foodery-FooderyTests/Pods-Foodery-FooderyTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB371FF5E9D201CB3E43DD95 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,23 +376,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Foodery/Pods-Foodery-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E017BCB6D95992AE601D265A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Foodery-FooderyTests/Pods-Foodery-FooderyTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Foodery-FooderyTests/Pods-Foodery-FooderyTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Foodery-FooderyTests/Pods-Foodery-FooderyTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -430,7 +430,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E810A5DCD27DDD0503DDC6F0 /* Pods-Foodery-FooderyTests.debug.xcconfig */;
+			baseConfigurationReference = 4E6C8BBC6205F36E279ED38D /* Pods-Foodery-FooderyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -458,7 +458,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91BDBBDD32BC5AED4CE62A60 /* Pods-Foodery-FooderyTests.release.xcconfig */;
+			baseConfigurationReference = 32D9EE49974556C5CD4C2997 /* Pods-Foodery-FooderyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -483,7 +483,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B0167D4082F12B99DF8A350B /* Pods-Foodery.debug.xcconfig */;
+			baseConfigurationReference = EE43FC65E56325DC3187D60C /* Pods-Foodery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
@@ -516,7 +516,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 717CE20E085EC1A4F6F92D30 /* Pods-Foodery.release.xcconfig */;
+			baseConfigurationReference = 41E9049771E4DA5AA0DED2D3 /* Pods-Foodery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;

@@ -4,13 +4,14 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import LoginPage from './Screens/LoginPage';
 import BottomNavigation from './BottomNavigation';
 import SectionListScreen from './Screens/Section/SectionListScreen';
+import MapPage from './Screens/MapPage';
 
 const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="SectionListScreen">
+      <Stack.Navigator initialRouteName="LoginPage">
         <Stack.Screen
           name="LoginPage"
           component={LoginPage}
@@ -31,6 +32,15 @@ const Navigation = () => {
         <Stack.Screen
           name="SectionListScreen"
           component={SectionListScreen}
+          options={{
+            headerShown: false,
+            animation: 'fade_from_bottom',
+            animationDuration: 600,
+          }}
+        />
+        <Stack.Screen
+          name="MapPage"
+          component={MapPage}
           options={{
             headerShown: false,
             animation: 'fade_from_bottom',
