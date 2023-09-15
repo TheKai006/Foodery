@@ -1,12 +1,10 @@
-import {
-  combineReducers,
-  configureStore,
-  applyMiddleware,
-} from '@reduxjs/toolkit';
-import ApiCall from './Slice';
+import {combineReducers, configureStore} from '@reduxjs/toolkit';
+import {persistStore, persistReducer} from 'redux-persist';
+import createSagaMiddleware from '@redux-saga/core';
+import apiSaga from './Saga';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {persistReducer, persistStore} from 'redux-persist';
-import thunk from 'redux-thunk';
+import dataReducer from './reducers/dataReducer';
+import {themeSlice} from './reducers/themeReducer';
 
 const persistConfig = {
   key: 'root',
@@ -14,12 +12,19 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-  Call: ApiCall,
+  dataReducer: dataReducer,
+  theme: themeSlice,
 });
-
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-const store = configureStore(persistedReducer, applyMiddleware(thunk));
+const sagaMiddleware = createSagaMiddleware();
+
+const store = configureStore({
+  reducer: persistedReducer,
+  middleware: [sagaMiddleware],
+});
+
+sagaMiddleware.run(apiSaga);
 
 const persistor = persistStore(store);
 

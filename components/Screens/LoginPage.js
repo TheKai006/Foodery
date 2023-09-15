@@ -12,7 +12,7 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {moderateScale, moderateVerticalScale} from 'react-native-size-matters';
 import {useDispatch, useSelector} from 'react-redux';
-import {toggleTheme} from './Home/Slice';
+import {toggleTheme} from './Home/reducers/themeReducer';
 import LanguageModal from '../assets/Lang/LanguageModal';
 import {translation} from '../assets/Lang/Languages';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -30,7 +30,7 @@ const LoginPage = ({navigation}) => {
     lock ? setLock(false) : setLock(true);
   };
 
-  const isDarkMode = useSelector(state => state.Call.isDarkMode);
+  const isDarkMode = useSelector(state => state.theme?.isDarkMode);
   const dispatch = useDispatch();
 
   const handleToggle = () => {

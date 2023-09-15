@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {getData} from './Slice';
+import {dataReducer} from './reducers/dataReducer';
 import {moderateScale, verticalScale} from 'react-native-size-matters';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {translation} from '../../assets/Lang/Languages';
@@ -19,7 +19,6 @@ import {translation} from '../../assets/Lang/Languages';
 const HomePage = ({navigation}) => {
   const [data, setData] = useState();
   const [selectedLang, setSelectedLang] = useState(0);
-  const [some, setSome] = useState(true);
   useEffect(() => {
     getLang();
   }, []);
@@ -29,12 +28,12 @@ const HomePage = ({navigation}) => {
   };
 
   const dispatch = useDispatch();
-  const isDarkMode = useSelector(state => state.Call.isDarkMode);
+  const isDarkMode = useSelector(state => state.theme?.isDarkMode);
 
-  const respData = useSelector(state => state.Call);
+  const respData = useSelector(state => state.dataReducer);
 
   useEffect(() => {
-    dispatch(getData());
+    dispatch(dataReducer());
   }, []);
 
   useEffect(() => {

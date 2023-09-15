@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {getData} from '../Home/Slice';
+import {dataReducer} from '../Home/reducers/dataReducer';
 import {moderateScale, verticalScale} from 'react-native-size-matters';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -27,9 +27,9 @@ const HomePage = ({navigation}) => {
   const [recentFilter, setRecentFilter] = useState();
 
   const dispatch = useDispatch();
-  const isDarkMode = useSelector(state => state.Call.isDarkMode);
+  const isDarkMode = useSelector(state => state.theme?.isDarkMode);
 
-  const respData = useSelector(state => state.Call);
+  const respData = useSelector(state => state.dataReducer?.data);
 
   const onSearch = text => {
     if (text == '') {
@@ -73,13 +73,13 @@ const HomePage = ({navigation}) => {
   };
 
   useEffect(() => {
-    dispatch(getData());
+    dispatch(dataReducer());
   }, []);
 
   useEffect(() => {
-    if (respData?.data) {
-      setData(respData?.data);
-      setOldData(respData?.data);
+    if (respData) {
+      setData(respData);
+      setOldData(respData);
     }
   }, []);
 
