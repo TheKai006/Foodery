@@ -5,20 +5,19 @@ import {
   TextInput,
   TouchableOpacity,
   Image,
-  Platform,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {moderateScale, moderateVerticalScale} from 'react-native-size-matters';
 import {useDispatch, useSelector} from 'react-redux';
-import {toggleTheme} from './Home/reducers/themeReducer';
-import LanguageModal from '../assets/Lang/LanguageModal';
-import {translation} from '../assets/Lang/Languages';
+import {toggleTheme} from '../Home/reducers/themeReducer';
+import LanguageModal from '../../assets/Lang/LanguageModal';
+import {translation} from '../../assets/Lang/Languages';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const LoginPage = ({navigation}) => {
-  const imageRef = require('../assets/images/loginBG.png');
+  const imageRef = require('../../assets/images/loginBG.png');
   const [lock, setLock] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -30,7 +29,7 @@ const LoginPage = ({navigation}) => {
     lock ? setLock(false) : setLock(true);
   };
 
-  const isDarkMode = useSelector(state => state.theme?.isDarkMode);
+  const isDarkMode = useSelector(state => state?.theme?.isDarkModes);
   const dispatch = useDispatch();
 
   const handleToggle = () => {

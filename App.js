@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import Navigation from './components/Navigation';
+import Navigation from './component/navigation/Navigation';
 import {StatusBar} from 'react-native';
-import Splashscreen from './components/assets/SplashScreen/Splashscreen';
+import Splashscreen from './component/assets/SplashScreen/Splashscreen';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);

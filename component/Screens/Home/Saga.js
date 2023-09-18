@@ -4,9 +4,9 @@ import {fetchDataFailure, fetchDataSuccess} from './reducers/dataReducer';
 
 function* workGetFetch() {
   try {
-    const response = yield call(() => {
-      axios.get('https://fakestoreapi.com/products');
-    });
+    const response = yield call(() =>
+      axios.get('https://fakestoreapi.com/products'),
+    );
     yield put(fetchDataSuccess(response.data));
   } catch (error) {
     yield put(fetchDataFailure(error.message));
@@ -14,7 +14,7 @@ function* workGetFetch() {
 }
 
 function* apiSaga() {
-  yield takeEvery('dataSlice/fetchDataRequest', workGetFetch);
+  yield takeEvery('./reducers/dataReducer/fetchDataRequest', workGetFetch);
 }
 
 export default apiSaga;

@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {dataReducer} from '../Home/reducers/dataReducer';
+import {fetchDataRequest} from '../Home/reducers/dataReducer';
 import {moderateScale, verticalScale} from 'react-native-size-matters';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -29,7 +29,7 @@ const HomePage = ({navigation}) => {
   const dispatch = useDispatch();
   const isDarkMode = useSelector(state => state.theme?.isDarkMode);
 
-  const respData = useSelector(state => state.dataReducer?.data);
+  const respData = useSelector(state => state.dataReducer);
 
   const onSearch = text => {
     if (text == '') {
@@ -73,7 +73,7 @@ const HomePage = ({navigation}) => {
   };
 
   useEffect(() => {
-    dispatch(dataReducer());
+    dispatch(fetchDataRequest());
   }, []);
 
   useEffect(() => {

@@ -16,7 +16,6 @@
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/native-stack": "^6.9.12",
     "@react-navigation/stack": "^6.3.16",
-    "@redux-saga/core": "^1.2.3",
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
     "i18next": "^23.2.11",
@@ -35,7 +34,6 @@
     "react-native-size-matters": "^0.4.0",
     "react-native-vector-icons": "^9.2.0",
     "react-redux": "^8.1.2",
-    "redux": "^4.2.1",
     "redux-persist": "^6.0.0",
     "redux-saga": "^1.2.3",
     "redux-saga-effects": "^1.1.0"

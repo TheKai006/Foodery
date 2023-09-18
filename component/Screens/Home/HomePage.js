@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {dataReducer} from './reducers/dataReducer';
+import {fetchDataRequest} from './reducers/dataReducer';
 import {moderateScale, verticalScale} from 'react-native-size-matters';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {translation} from '../../assets/Lang/Languages';
@@ -24,7 +24,11 @@ const HomePage = ({navigation}) => {
   }, []);
 
   const getLang = async () => {
-    setSelectedLang(parseInt(await AsyncStorage.getItem('LANG')));
+    try {
+      setSelectedLang(parseInt(await AsyncStorage.getItem('LANG')) || 0);
+    } catch (error) {
+      console.error('AsyncStorage error:', error);
+    }
   };
 
   const dispatch = useDispatch();
@@ -33,12 +37,13 @@ const HomePage = ({navigation}) => {
   const respData = useSelector(state => state.dataReducer);
 
   useEffect(() => {
-    dispatch(dataReducer());
+    dispatch(fetchDataRequest());
   }, []);
 
   useEffect(() => {
     if (respData?.data) {
       setData(respData?.data);
+      console.log(data);
     }
   }, []);
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import HomePage from './Screens/Home/HomePage';
-import MapPage from './Screens/MapPage';
+import HomePage from '../Screens/Home/HomePage';
+import MapPage from '../Screens/map/MapPage';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {StatusBar} from 'react-native';
 

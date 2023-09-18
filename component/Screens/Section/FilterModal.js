@@ -22,7 +22,7 @@ const FilterModal = ({
     {name: 'Sort By Rating', selected: false},
   ]);
 
-  const isDarkMode = useSelector(state => state.Call.isDarkMode);
+  const isDarkMode = useSelector(state => state.theme?.isDarkMode);
 
   const onSelect = index => {
     const temp = filter;

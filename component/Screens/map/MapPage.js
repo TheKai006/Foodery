@@ -53,7 +53,7 @@ const MapPage = ({navigation}) => {
         initialRegion={userLocation}>
         <Marker
           coordinate={destination}
-          image={require('../assets/images/shopIcon.png')}>
+          image={require('../../assets/images/shopIcon.png')}>
           <Callout>
             <View style={{flexDirection: 'row'}}>
               <View style={{flexDirection: 'column'}}>
