@@ -1,3 +1,4 @@
+import React, {useEffect, useState} from 'react';
 import {
   FlatList,
   StyleSheet,
@@ -7,18 +8,18 @@ import {
   TouchableOpacity,
   Image,
   Platform,
-  StatusBar,
 } from 'react-native';
-import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {fetchDataRequest} from './reducers/dataReducer';
-import {moderateScale, verticalScale} from 'react-native-size-matters';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
+import {moderateScale, verticalScale} from 'react-native-size-matters';
 import {translation} from '../../assets/Lang/Languages';
+import {fetchDataRequest} from './reducers/DataReducer';
 
 const HomePage = ({navigation}) => {
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
   const [selectedLang, setSelectedLang] = useState(0);
+
   useEffect(() => {
     getLang();
   }, []);
@@ -33,19 +34,20 @@ const HomePage = ({navigation}) => {
 
   const dispatch = useDispatch();
   const isDarkMode = useSelector(state => state.theme?.isDarkMode);
+  console.log(isDarkMode);
 
-  const respData = useSelector(state => state.dataReducer);
+  const respData = useSelector(state => state?.data);
+  console.log(respData);
 
   useEffect(() => {
     dispatch(fetchDataRequest());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (respData?.data) {
-      setData(respData?.data);
-      console.log(data);
+      setData(respData.data);
     }
-  }, []);
+  }, [respData]);
 
   const light = StyleSheet.create({
     container: {
@@ -77,19 +79,16 @@ const HomePage = ({navigation}) => {
             <View
               style={[
                 styles.headerView,
-                selectedLang === 1
-                  ? {
-                      gap:
-                        Platform.OS === 'ios'
-                          ? moderateScale(30)
-                          : moderateScale(50),
-                    }
-                  : {
-                      gap:
-                        Platform.OS === 'ios'
-                          ? moderateScale(80)
-                          : moderateScale(90),
-                    },
+                {
+                  gap:
+                    selectedLang === 1
+                      ? Platform.OS === 'ios'
+                        ? moderateScale(30)
+                        : moderateScale(50)
+                      : Platform.OS === 'ios'
+                      ? moderateScale(80)
+                      : moderateScale(90),
+                },
               ]}>
               <TouchableOpacity
                 activeOpacity={0.8}
@@ -179,7 +178,6 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     flexDirection: 'row',
     top: Platform.OS === 'ios' ? moderateScale(50) : moderateScale(20),
-    gap: Platform.OS === 'ios' ? moderateScale(80) : moderateScale(90),
   },
   backTxt: {
     fontSize: moderateScale(16),
@@ -210,7 +208,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: '80%',
-    textAlign: 'center',
   },
   image: {
     width: moderateScale(150),

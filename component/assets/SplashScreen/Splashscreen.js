@@ -9,7 +9,7 @@ const Splashscreen = ({setIsLoading}) => {
         source={require('./animation_lk2hrjl3.json')}
         autoPlay
         loop={false}
-        duration={3269}
+        duration={3270}
         onAnimationFinish={() => setIsLoading(false)}
       />
     </View>

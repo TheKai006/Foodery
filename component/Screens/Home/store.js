@@ -1,10 +1,10 @@
 import {combineReducers, configureStore} from '@reduxjs/toolkit';
 import {persistStore, persistReducer} from 'redux-persist';
-import createSagaMiddleware from '@redux-saga/core';
-import apiSaga from './Saga';
+import createSagaMiddleware from 'redux-saga';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import dataReducer from './reducers/dataReducer';
-import {themeSlice} from './reducers/themeReducer';
+import dataReducer from './reducers/DataReducer';
+import themeSlice from './reducers/themeReducer';
+import apiSaga from './Saga';
 
 const persistConfig = {
   key: 'root',
@@ -12,9 +12,10 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-  dataReducer: dataReducer,
+  data: dataReducer,
   theme: themeSlice,
 });
+
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const sagaMiddleware = createSagaMiddleware();

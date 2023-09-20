@@ -29,7 +29,7 @@ const LoginPage = ({navigation}) => {
     lock ? setLock(false) : setLock(true);
   };
 
-  const isDarkMode = useSelector(state => state?.theme?.isDarkModes);
+  const isDarkMode = useSelector(state => state.theme.isDarkMode);
   const dispatch = useDispatch();
 
   const handleToggle = () => {
@@ -59,53 +59,26 @@ const LoginPage = ({navigation}) => {
   const submission = () => {
     if (email.length === 0) {
       setState({
-        emailError:
-          selectedLang === 0
-            ? translation[0].EmptyEmailError
-            : selectedLang === 1
-            ? translation[1].EmptyEmailError
-            : selectedLang === 2
-            ? translation[2].EmptyEmailError
-            : null,
+        ...state,
+        emailError: translation[selectedLang].EmptyEmailError,
       });
     } else if (password.length === 0) {
       setState({
-        passwordError:
-          selectedLang === 0
-            ? translation[0].EmptyPassword
-            : selectedLang === 1
-            ? translation[1].EmptyPassword
-            : selectedLang === 2
-            ? translation[2].EmptyPassword
-            : null,
+        ...state,
+        passwordError: translation[selectedLang].EmptyPassword,
       });
     } else if (email !== data[0]) {
       setState({
-        emailError:
-          selectedLang === 0
-            ? translation[0].IncorrectEmail
-            : selectedLang === 1
-            ? translation[1].IncorrectEmail
-            : selectedLang === 2
-            ? translation[2].IncorrectEmail
-            : null,
+        ...state,
+        emailError: translation[selectedLang].IncorrectEmail,
       });
     } else if (password !== data[1]) {
       setState({
-        passwordError:
-          selectedLang === 0
-            ? translation[0].IncorrectPassword
-            : selectedLang === 1
-            ? translation[1].IncorrectPassword
-            : selectedLang === 2
-            ? translation[2].IncorrectPassword
-            : null,
+        ...state,
+        passwordError: translation[selectedLang].IncorrectPassword,
       });
     } else {
-      setState({
-        emailError: null,
-        passwordError: null,
-      });
+      setState({emailError: '', passwordError: ''});
       navigation.navigate('BottomNavigation');
     }
   };
@@ -304,7 +277,7 @@ const styles = StyleSheet.create({
   },
   inputView: {
     width: moderateScale(300),
-    height: moderateVerticalScale(40),
+    paddingVertical: 10,
     alignSelf: 'center',
     marginTop: moderateScale(7),
     borderRadius: moderateScale(12),
@@ -325,7 +298,7 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(15),
   },
   icons: {
-    marginTop: moderateScale(10),
+    marginVertical: moderateScale(5),
   },
   submit: {
     marginTop: moderateVerticalScale(30),
