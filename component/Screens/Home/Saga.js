@@ -4,7 +4,7 @@ import {
   fetchDataFailure,
   fetchDataSuccess,
   fetchDataRequest,
-} from './reducers/DataReducer';
+} from '../reducers/DataReducer';
 
 function* workGetFetch() {
   try {
@@ -12,15 +12,13 @@ function* workGetFetch() {
       axios.get('https://fakestoreapi.com/products'),
     );
     yield put(fetchDataSuccess(response?.data));
-    console.log(response.data);
   } catch (error) {
     yield put(fetchDataFailure(error.message));
-    console.log(error.message);
   }
 }
 
 function* apiSaga() {
-  yield takeEvery(fetchDataRequest.type, workGetFetch); // Use fetchDataRequest.type to get the action type
+  yield takeEvery(fetchDataRequest.type, workGetFetch);
 }
 
 export default apiSaga;

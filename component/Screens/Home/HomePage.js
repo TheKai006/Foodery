@@ -11,10 +11,9 @@ import {
 } from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
 import {moderateScale, verticalScale} from 'react-native-size-matters';
 import {translation} from '../../assets/Lang/Languages';
-import {fetchDataRequest} from './reducers/DataReducer';
+import {fetchDataRequest} from '../reducers/DataReducer';
 
 const HomePage = ({navigation}) => {
   const [data, setData] = useState([]);
@@ -34,10 +33,7 @@ const HomePage = ({navigation}) => {
 
   const dispatch = useDispatch();
   const isDarkMode = useSelector(state => state.theme?.isDarkMode);
-  console.log(isDarkMode);
-
   const respData = useSelector(state => state?.data);
-  console.log(respData);
 
   useEffect(() => {
     dispatch(fetchDataRequest());

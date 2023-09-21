@@ -11,7 +11,7 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {moderateScale, moderateVerticalScale} from 'react-native-size-matters';
 import {useDispatch, useSelector} from 'react-redux';
-import {toggleTheme} from '../Home/reducers/themeReducer';
+import {toggleTheme} from '../reducers/themeReducer';
 import LanguageModal from '../../assets/Lang/LanguageModal';
 import {translation} from '../../assets/Lang/Languages';
 import AsyncStorage from '@react-native-async-storage/async-storage';
