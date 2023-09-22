@@ -4,6 +4,7 @@ import createSagaMiddleware from 'redux-saga';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import dataReducer from '../reducers/DataReducer';
 import themeSlice from '../reducers/themeReducer';
+import langSlice from '../reducers/LanguageReducer';
 import apiSaga from './Saga';
 
 const persistConfig = {
@@ -14,6 +15,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   data: dataReducer,
   theme: themeSlice,
+  language: langSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

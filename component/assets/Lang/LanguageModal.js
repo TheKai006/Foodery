@@ -8,7 +8,8 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
+import {changeLanguage} from '../../Screens/reducers/LanguageReducer';
 
 const LanguageModal = ({
   langModalVisible,
@@ -23,6 +24,8 @@ const LanguageModal = ({
   ]);
 
   const isDarkMode = useSelector(state => state.theme?.isDarkMode);
+  const language = useSelector(state => state.language);
+  const dispatch = useDispatch();
 
   const onSelect = index => {
     const temp = languages;
@@ -44,6 +47,13 @@ const LanguageModal = ({
     });
     setLanguages(temp2);
   };
+
+  // const onSelect = () => {
+  //   const temp = languages;
+  //   temp.map(item => {
+  //     dispatch(changeLanguage(item.name));
+  //   });
+  // };
 
   return (
     <Modal

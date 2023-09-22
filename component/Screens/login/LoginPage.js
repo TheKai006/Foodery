@@ -30,6 +30,7 @@ const LoginPage = ({navigation}) => {
   };
 
   const isDarkMode = useSelector(state => state.theme.isDarkMode);
+
   const dispatch = useDispatch();
 
   const handleToggle = () => {
