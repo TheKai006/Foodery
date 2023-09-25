@@ -33,6 +33,7 @@ const HomePage = ({navigation}) => {
 
   const dispatch = useDispatch();
   const isDarkMode = useSelector(state => state.theme?.isDarkMode);
+  const language = useSelector(state => state.language.data);
   const respData = useSelector(state => state?.data);
 
   useEffect(() => {
@@ -90,21 +91,21 @@ const HomePage = ({navigation}) => {
                 activeOpacity={0.8}
                 onPress={() => navigation.navigate('LoginPage')}>
                 <Text style={[styles.backTxt]}>
-                  {selectedLang === 0
+                  {language === 'English'
                     ? translation[0].Back
-                    : selectedLang === 1
+                    : language === 'Italiano'
                     ? translation[1].Back
-                    : selectedLang === 2
+                    : language === 'عربي'
                     ? translation[2].Back
                     : null}
                 </Text>
               </TouchableOpacity>
               <Text style={[styles.Heading]}>
-                {selectedLang === 0
+                {language === 'English'
                   ? translation[0].ProductList
-                  : selectedLang === 1
+                  : language === 'Italiano'
                   ? translation[1].ProductList
-                  : selectedLang === 2
+                  : language === 'عربي'
                   ? translation[2].ProductList
                   : null}
               </Text>

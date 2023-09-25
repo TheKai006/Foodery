@@ -6,6 +6,7 @@ import dataReducer from '../reducers/DataReducer';
 import themeSlice from '../reducers/themeReducer';
 import langSlice from '../reducers/LanguageReducer';
 import apiSaga from './Saga';
+import UserSlice from '../reducers/UserSlice';
 
 const persistConfig = {
   key: 'root',
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   data: dataReducer,
   theme: themeSlice,
   language: langSlice,
+  login: UserSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

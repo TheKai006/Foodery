@@ -9,7 +9,11 @@ import {
 import React, {useEffect, useState} from 'react';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {moderateScale, moderateVerticalScale} from 'react-native-size-matters';
+import {
+  moderateScale,
+  moderateVerticalScale,
+  verticalScale,
+} from 'react-native-size-matters';
 import {useDispatch, useSelector} from 'react-redux';
 import {toggleTheme} from '../reducers/themeReducer';
 import LanguageModal from '../../assets/Lang/LanguageModal';
@@ -30,6 +34,7 @@ const LoginPage = ({navigation}) => {
   };
 
   const isDarkMode = useSelector(state => state.theme.isDarkMode);
+  const language = useSelector(state => state.language.data);
 
   const dispatch = useDispatch();
 
@@ -91,11 +96,11 @@ const LoginPage = ({navigation}) => {
       <View style={styles.headerView}>
         <Text
           style={[styles.head, isDarkMode ? dark.container : light.container]}>
-          {selectedLang === 0
+          {language === 'English'
             ? translation[0].SignIn
-            : selectedLang === 1
+            : language === 'Italiano'
             ? translation[1].SignIn
-            : selectedLang === 2
+            : language === 'عربي'
             ? translation[2].SignIn
             : null}
         </Text>
@@ -117,18 +122,18 @@ const LoginPage = ({navigation}) => {
           ]}>
           <TextInput
             placeholder={
-              selectedLang === 0
+              language === 'English'
                 ? translation[0].Email
-                : selectedLang === 1
+                : language === 'Italiano'
                 ? translation[1].Email
-                : selectedLang === 2
+                : language === 'عربي'
                 ? translation[2].Email
                 : null
             }
             placeholderTextColor={isDarkMode ? '#FFFFFF' : '#000000'}
             style={[
               styles.input,
-              {textAlign: selectedLang == 2 ? 'right' : 'left'},
+              {textAlign: language == 'عربي' ? 'right' : 'left'},
             ]}
             autoCapitalize="none"
             autoCorrect={false}
@@ -147,7 +152,7 @@ const LoginPage = ({navigation}) => {
         <Text
           style={[
             styles.Err,
-            {textAlign: selectedLang == 2 ? 'right' : 'left'},
+            {textAlign: selectedLang == 'عربي' ? 'right' : 'left'},
           ]}>
           {state.emailError}
         </Text>
@@ -161,18 +166,18 @@ const LoginPage = ({navigation}) => {
           ]}>
           <TextInput
             placeholder={
-              selectedLang === 0
+              language === 'English'
                 ? translation[0].Password
-                : selectedLang === 1
+                : language === 'Italiano'
                 ? translation[1].Password
-                : selectedLang === 2
+                : language === 'عربي'
                 ? translation[2].Password
                 : null
             }
             placeholderTextColor={isDarkMode ? '#FFFFFF' : '#000000'}
             style={[
               styles.input,
-              {textAlign: selectedLang == 2 ? 'right' : 'left'},
+              {textAlign: language == 'عربي' ? 'right' : 'left'},
             ]}
             autoCapitalize="none"
             autoCorrect={false}
@@ -194,7 +199,7 @@ const LoginPage = ({navigation}) => {
         <Text
           style={[
             styles.Err,
-            {textAlign: selectedLang == 2 ? 'right' : 'left'},
+            {textAlign: language == 'عربي' ? 'right' : 'left'},
           ]}>
           {state.passwordError}
         </Text>
@@ -207,11 +212,11 @@ const LoginPage = ({navigation}) => {
         style={styles.submit}
         activeOpacity={0.8}>
         <Text style={styles.submitText}>
-          {selectedLang === 0
+          {language === 'English'
             ? translation[0].Continue
-            : selectedLang === 1
+            : language === 'Italiano'
             ? translation[1].Continue
-            : selectedLang === 2
+            : language === 'عربي'
             ? translation[2].Continue
             : null}
         </Text>
@@ -233,11 +238,11 @@ const LoginPage = ({navigation}) => {
             setLangModalVisible(!langModalVisible);
           }}>
           <Text style={{color: isDarkMode ? '#FFFFFF' : '#000000'}}>
-            {selectedLang === 0
+            {language === 'English'
               ? translation[0].SelectLanguage
-              : selectedLang === 1
+              : language === 'Italiano'
               ? translation[1].SelectLanguage
-              : selectedLang === 2
+              : language === 'عربي'
               ? translation[2].SelectLanguage
               : null}
           </Text>
@@ -278,8 +283,9 @@ const styles = StyleSheet.create({
   },
   inputView: {
     width: moderateScale(300),
-    paddingVertical: 10,
+    paddingVertical: moderateScale(5),
     alignSelf: 'center',
+    alignItems: 'center',
     marginTop: moderateScale(7),
     borderRadius: moderateScale(12),
     flexDirection: 'row',
@@ -299,7 +305,7 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(15),
   },
   icons: {
-    marginVertical: moderateScale(5),
+    marginVertical: verticalScale(5),
   },
   submit: {
     marginTop: moderateVerticalScale(30),

@@ -16,7 +16,6 @@ const LanguageModal = ({
   setLangModalVisible,
   onSelectedLang,
 }) => {
-  const [selectedLang, setSelectedLang] = useState(0);
   const [languages, setLanguages] = useState([
     {name: 'English', selected: true},
     {name: 'Italiano', selected: false},
@@ -24,7 +23,7 @@ const LanguageModal = ({
   ]);
 
   const isDarkMode = useSelector(state => state.theme?.isDarkMode);
-  const language = useSelector(state => state.language);
+  const language = useSelector(state => state.language.data);
   const dispatch = useDispatch();
 
   const onSelect = index => {
@@ -33,27 +32,16 @@ const LanguageModal = ({
       if (index == ind) {
         if (item.selected == true) {
           item.selected = true;
+          dispatch(changeLanguage(item.name));
         } else {
           item.selected = true;
-          setSelectedLang(index);
+          dispatch(changeLanguage(item.name));
         }
       } else {
         item.selected = false;
       }
     });
-    let temp2 = [];
-    temp.map(item => {
-      temp2.push(item);
-    });
-    setLanguages(temp2);
   };
-
-  // const onSelect = () => {
-  //   const temp = languages;
-  //   temp.map(item => {
-  //     dispatch(changeLanguage(item.name));
-  //   });
-  // };
 
   return (
     <Modal
@@ -89,15 +77,6 @@ const LanguageModal = ({
                       setLangModalVisible(false);
                       onSelectedLang(index);
                     }}>
-                    <MaterialIcons
-                      name={
-                        item.selected === true
-                          ? 'radio-button-checked'
-                          : 'radio-button-unchecked'
-                      }
-                      size={20}
-                      style={{color: isDarkMode ? '#FFFFFF' : '#000000'}}
-                    />
                     <Text
                       style={[
                         styles.languageText,
