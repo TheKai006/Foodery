@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator();
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="LoginPage">
+      <Stack.Navigator>
         <Stack.Screen
           name="LoginPage"
           component={LoginPage}
@@ -32,15 +32,6 @@ const Navigation = () => {
         <Stack.Screen
           name="SectionListScreen"
           component={SectionListScreen}
-          options={{
-            headerShown: false,
-            animation: 'fade_from_bottom',
-            animationDuration: 600,
-          }}
-        />
-        <Stack.Screen
-          name="MapPage"
-          component={MapPage}
           options={{
             headerShown: false,
             animation: 'fade_from_bottom',

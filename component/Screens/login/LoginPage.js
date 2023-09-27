@@ -19,6 +19,7 @@ import {toggleTheme} from '../reducers/themeReducer';
 import LanguageModal from '../../assets/Lang/LanguageModal';
 import {translation} from '../../assets/Lang/Languages';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {EnterEmail, EnterPass} from '../reducers/UserSlice';
 
 const LoginPage = ({navigation}) => {
   const imageRef = require('../../assets/images/loginBG.png');
@@ -35,6 +36,21 @@ const LoginPage = ({navigation}) => {
 
   const isDarkMode = useSelector(state => state.theme.isDarkMode);
   const language = useSelector(state => state.language.data);
+  const userData = useSelector(state => state.login);
+
+  const userEmail = userData.Email;
+  const userPass = userData.Password;
+
+  //!Authentication
+  useEffect(() => {
+    // const submission12 = () => {
+    if (userEmail !== null && userPass !== null) {
+      navigation.navigate('BottomNavigation');
+    }
+    // };
+  }, []);
+
+  // console.log(userEmail.length, userPass.length);
 
   const dispatch = useDispatch();
 
@@ -56,38 +72,41 @@ const LoginPage = ({navigation}) => {
     },
   });
 
-  const data = ['manekshahilraj1@gmail.com', 'manek0510'];
+  const submission = () => {
+    if (userEmail !== null && userPass !== null) {
+      navigation.navigate('BottomNavigation');
+    }
+  };
+
+  const emailRegex =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)/;
 
   const saveSelectedLAng = async index => {
     await AsyncStorage.setItem('LANG', index + '');
   };
 
-  const submission = () => {
-    if (email.length === 0) {
-      setState({
-        ...state,
-        emailError: translation[selectedLang].EmptyEmailError,
-      });
-    } else if (password.length === 0) {
-      setState({
-        ...state,
-        passwordError: translation[selectedLang].EmptyPassword,
-      });
-    } else if (email !== data[0]) {
-      setState({
-        ...state,
-        emailError: translation[selectedLang].IncorrectEmail,
-      });
-    } else if (password !== data[1]) {
-      setState({
-        ...state,
-        passwordError: translation[selectedLang].IncorrectPassword,
-      });
-    } else {
-      setState({emailError: '', passwordError: ''});
-      navigation.navigate('BottomNavigation');
-    }
-  };
+  // const submission = () => {
+  //   if (userEmail.length() === 0) {
+  //     setState({
+  //       emailError: translation[selectedLang].EmptyEmailError,
+  //     });
+  //   } else if (userPass.length() === 0) {
+  //     setState({
+  //       passwordError: translation[selectedLang].EmptyPassword,
+  //     });
+  //   } else if (emailRegex.test(userEmail)) {
+  //     setState({
+  //       emailError: translation[selectedLang].IncorrectEmail,
+  //     });
+  //   } else if (emailRegex.test(userPass)) {
+  //     setState({
+  //       passwordError: translation[selectedLang].IncorrectPassword,
+  //     });
+  //   } else {
+  //     setState({emailError: '', passwordError: ''});
+  //     navigation.navigate('BottomNavigation');
+  //   }
+  // };
 
   return (
     <View style={[styles.main, isDarkMode ? dark.container : light.container]}>
@@ -138,8 +157,8 @@ const LoginPage = ({navigation}) => {
             autoCapitalize="none"
             autoCorrect={false}
             color={isDarkMode ? '#FFFFFF' : '#000000'}
-            value={email}
-            onChangeText={actualData => setEmail(actualData)}
+            value={userData.Email}
+            onChangeText={actualData => dispatch(EnterEmail(actualData))}
           />
           <Fontisto
             name="email"
@@ -183,8 +202,8 @@ const LoginPage = ({navigation}) => {
             autoCorrect={false}
             secureTextEntry={lock}
             color={isDarkMode ? '#FFFFFF' : '#000000'}
-            value={password}
-            onChangeText={actualData => setPassword(actualData)}
+            value={userData.Password}
+            onChangeText={actualData => dispatch(EnterPass(actualData))}
           />
           <TouchableOpacity onPress={showHide} activeOpacity={0.7}>
             <Ionicons
@@ -205,10 +224,10 @@ const LoginPage = ({navigation}) => {
         </Text>
       </View>
       <TouchableOpacity
-        // onPress={submission}
-        onPress={() => {
-          navigation.navigate('BottomNavigation');
-        }}
+        onPress={submission}
+        // onPress={() => {
+        //   navigation.navigate('BottomNavigation');
+        // }}
         style={styles.submit}
         activeOpacity={0.8}>
         <Text style={styles.submitText}>

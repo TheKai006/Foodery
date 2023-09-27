@@ -45,7 +45,7 @@ const LanguageModal = ({
 
   return (
     <Modal
-      animationType="slide"
+      animationType="none"
       transparent={true}
       visible={langModalVisible}
       onRequestClose={() => {

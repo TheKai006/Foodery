@@ -11,7 +11,7 @@ export const UserSlice = createSlice({
       state.Email = actions.payload;
     },
     EnterPass: (state, actions) => {
-      state.Email = actions.payload;
+      state.Password = actions.payload;
     },
   },
 });

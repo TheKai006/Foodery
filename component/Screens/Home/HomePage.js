@@ -14,6 +14,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {moderateScale, verticalScale} from 'react-native-size-matters';
 import {translation} from '../../assets/Lang/Languages';
 import {fetchDataRequest} from '../reducers/DataReducer';
+import {EnterEmail, EnterPass} from '../reducers/UserSlice';
 
 const HomePage = ({navigation}) => {
   const [data, setData] = useState([]);
@@ -80,23 +81,34 @@ const HomePage = ({navigation}) => {
                   gap:
                     selectedLang === 1
                       ? Platform.OS === 'ios'
-                        ? moderateScale(30)
+                        ? moderateScale(80)
                         : moderateScale(50)
                       : Platform.OS === 'ios'
-                      ? moderateScale(80)
+                      ? moderateScale(60)
                       : moderateScale(90),
                 },
               ]}>
               <TouchableOpacity
                 activeOpacity={0.8}
-                onPress={() => navigation.navigate('LoginPage')}>
+                onPress={() => {
+                  navigation.navigate('LoginPage'),
+                    dispatch(EnterEmail(null)),
+                    dispatch(EnterPass(null));
+                }}>
                 <Text style={[styles.backTxt]}>
-                  {language === 'English'
+                  {/* {language === 'English'
                     ? translation[0].Back
                     : language === 'Italiano'
                     ? translation[1].Back
                     : language === 'عربي'
                     ? translation[2].Back
+                    : null} */}
+                  {language === 'English'
+                    ? translation[0].LogOut
+                    : language === 'Italiano'
+                    ? translation[1].LogOut
+                    : language === 'عربي'
+                    ? translation[2].LogOut
                     : null}
                 </Text>
               </TouchableOpacity>
