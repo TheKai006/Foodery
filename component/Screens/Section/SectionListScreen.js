@@ -16,6 +16,7 @@ import {moderateScale, verticalScale} from 'react-native-size-matters';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FilterModal from './FilterModal';
+import Foundation from 'react-native-vector-icons/Foundation';
 
 const HomePage = ({navigation}) => {
   const [oldData, setOldData] = useState([]);
@@ -112,8 +113,15 @@ const HomePage = ({navigation}) => {
             <View style={styles.headerView}>
               <TouchableOpacity
                 activeOpacity={0.8}
-                onPress={() => navigation.navigate('LoginPage')}>
-                <Text style={[styles.backTxt]}>Back</Text>
+                onPress={() => {
+                  navigation.openDrawer();
+                }}>
+                <Foundation
+                  name="list"
+                  size={100}
+                  color={'#FFFFFF'}
+                  style={styles.backTxt}
+                />
               </TouchableOpacity>
               <Text style={[styles.Heading]}>Section List</Text>
               <TouchableOpacity
@@ -122,7 +130,7 @@ const HomePage = ({navigation}) => {
                 <AntDesign
                   name="search1"
                   size={25}
-                  style={{marginRight: 50, marginBottom: 5, color: 'white'}}
+                  style={{marginRight: moderateScale(10), color: 'white'}}
                 />
               </TouchableOpacity>
             </View>
@@ -256,19 +264,19 @@ const styles = StyleSheet.create({
     height: Platform.OS === 'ios' ? verticalScale(70) : verticalScale(50),
     backgroundColor: '#ff4500',
     width: '100%',
-    gap: Platform.OS === 'ios' ? moderateScale(80) : moderateScale(90),
   },
   headerView: {
-    alignItems: 'flex-end',
     flexDirection: 'row',
     top: Platform.OS === 'ios' ? moderateScale(50) : moderateScale(20),
-    gap: Platform.OS === 'ios' ? moderateScale(80) : moderateScale(90),
+    gap: Platform.OS === 'ios' ? moderateScale(90) : moderateScale(90),
+    alignSelf: 'flex-end',
   },
   backTxt: {
     fontSize: moderateScale(16),
-    marginLeft: moderateScale(8),
+    marginHorizontal: moderateScale(10),
     fontWeight: '500',
     color: '#FFFFFF',
+    top: 10,
   },
   Heading: {
     fontSize: moderateScale(26),

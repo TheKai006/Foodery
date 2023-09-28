@@ -3,6 +3,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomePage from '../Screens/Home/HomePage';
 import MapPage from '../Screens/map/MapPage';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import DrawerNavigation from './DrawerNavigation';
 
 const Tab = createBottomTabNavigator();
 
@@ -26,8 +27,8 @@ const BottomNavigation = () => {
   return (
     <Tab.Navigator screenOptions={Icons} initialRouteName="HomePage">
       <Tab.Screen
-        name="HomePage"
-        component={HomePage}
+        name="DrawerNavigation"
+        component={DrawerNavigation}
         options={{headerShown: false}}
       />
       <Tab.Screen

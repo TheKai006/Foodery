@@ -15,6 +15,7 @@ import {moderateScale, verticalScale} from 'react-native-size-matters';
 import {translation} from '../../assets/Lang/Languages';
 import {fetchDataRequest} from '../reducers/DataReducer';
 import {EnterEmail, EnterPass} from '../reducers/UserSlice';
+import Foundation from 'react-native-vector-icons/Foundation';
 
 const HomePage = ({navigation}) => {
   const [data, setData] = useState([]);
@@ -91,26 +92,14 @@ const HomePage = ({navigation}) => {
               <TouchableOpacity
                 activeOpacity={0.8}
                 onPress={() => {
-                  navigation.navigate('LoginPage'),
-                    dispatch(EnterEmail(null)),
-                    dispatch(EnterPass(null));
+                  navigation.openDrawer();
                 }}>
-                <Text style={[styles.backTxt]}>
-                  {/* {language === 'English'
-                    ? translation[0].Back
-                    : language === 'Italiano'
-                    ? translation[1].Back
-                    : language === 'عربي'
-                    ? translation[2].Back
-                    : null} */}
-                  {language === 'English'
-                    ? translation[0].LogOut
-                    : language === 'Italiano'
-                    ? translation[1].LogOut
-                    : language === 'عربي'
-                    ? translation[2].LogOut
-                    : null}
-                </Text>
+                <Foundation
+                  name="list"
+                  size={100}
+                  color={'#FFFFFF'}
+                  style={styles.backTxt}
+                />
               </TouchableOpacity>
               <Text style={[styles.Heading]}>
                 {language === 'English'
@@ -190,7 +179,8 @@ const styles = StyleSheet.create({
   },
   backTxt: {
     fontSize: moderateScale(16),
-    marginLeft: moderateScale(8),
+    marginHorizontal: moderateScale(20),
+    bottom: moderateScale(4),
     fontWeight: '500',
     color: '#FFFFFF',
   },
@@ -198,6 +188,7 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(26),
     fontWeight: '600',
     color: '#FFFFFF',
+    textAlign: 'center',
   },
   list: {
     width: '100%',
