@@ -1,11 +1,11 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import LoginPage from '../Screens/login/LoginPage';
-import BottomNavigation from './BottomNavigation';
-import SectionListScreen from '../Screens/Section/SectionListScreen';
-import CustomDrawer from './CustomDrawer';
-import DrawerNavigation from './DrawerNavigation';
+import LoginPage from '../../Screens/login/LoginPage';
+import BottomNavigation from '../Bottom/BottomNavigation';
+import SectionListScreen from '../../Screens/Section/SectionListScreen';
+import CustomDrawer from '../Drawer/CustomDrawer';
+import DrawerNavigation from '../Drawer/DrawerNavigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +19,7 @@ const Navigation = () => {
           options={{
             headerShown: false,
             animation: 'fade',
+            gestureEnabled: false,
           }}
         />
         <Stack.Screen
@@ -28,6 +29,7 @@ const Navigation = () => {
             headerShown: false,
             animation: 'fade_from_bottom',
             animationDuration: 600,
+            gestureEnabled: false,
           }}
         />
         <Stack.Screen
@@ -36,6 +38,7 @@ const Navigation = () => {
           options={{
             headerShown: false,
             animation: 'fade',
+            gestureEnabled: false,
           }}
         />
         <Stack.Screen
@@ -44,6 +47,7 @@ const Navigation = () => {
           options={{
             headerShown: false,
             animation: 'fade',
+            gestureEnabled: false,
           }}
         />
       </Stack.Navigator>

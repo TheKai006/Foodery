@@ -1,16 +1,16 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import HomePage from '../Screens/Home/HomePage';
-import MapPage from '../Screens/map/MapPage';
+import HomePage from '../../Screens/Home/HomePage';
+import MapPage from '../../Screens/map/MapPage';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import DrawerNavigation from './DrawerNavigation';
+import DrawerNavigation from '../Drawer/DrawerNavigation';
 
 const Tab = createBottomTabNavigator();
 
 const Icons = ({route}) => ({
   tabBarIcon: ({focused, color, size}) => {
     let iconName;
-    if (route.name === 'HomePage') {
+    if (route.name === 'DrawerNavigation') {
       iconName = focused ? 'ios-home' : 'ios-home-outline';
     } else {
       iconName = focused ? 'map' : 'map-outline';

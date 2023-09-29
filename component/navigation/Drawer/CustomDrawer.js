@@ -8,7 +8,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
 import {useDispatch} from 'react-redux';
-import {EnterEmail, EnterPass} from '../Screens/reducers/UserSlice';
+import {EnterEmail, EnterPass} from '../../Screens/reducers/UserSlice';
 
 const CustomDrawer = props => {
   const dispatch = useDispatch();

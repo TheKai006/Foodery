@@ -14,7 +14,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {moderateScale, verticalScale} from 'react-native-size-matters';
 import {translation} from '../../assets/Lang/Languages';
 import {fetchDataRequest} from '../reducers/DataReducer';
-import {EnterEmail, EnterPass} from '../reducers/UserSlice';
 import Foundation from 'react-native-vector-icons/Foundation';
 
 const HomePage = ({navigation}) => {
@@ -85,8 +84,8 @@ const HomePage = ({navigation}) => {
                         ? moderateScale(80)
                         : moderateScale(50)
                       : Platform.OS === 'ios'
-                      ? moderateScale(60)
-                      : moderateScale(90),
+                      ? moderateScale(70)
+                      : moderateScale(80),
                 },
               ]}>
               <TouchableOpacity
